@@ -14,7 +14,6 @@ public class Login extends Base {
     @Test(priority = 1)
     public void verifyLoginWithValidCredentials() throws InterruptedException, IOException {
 
-
         driver.get(prop.getProperty("url"));
         driver.findElement(By.xpath("//span[normalize-space()='My Account']")).click();
         Thread.sleep(2000);
