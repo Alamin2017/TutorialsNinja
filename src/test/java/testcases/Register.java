@@ -31,6 +31,5 @@ public class Register extends Base {
         driver.findElement(By.xpath("//input[@value='Continue']")).click();
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"content\"]/h1")).isDisplayed());
         Thread.sleep(2000);
-        driver.quit();
     }
 }

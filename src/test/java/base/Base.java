@@ -1,5 +1,4 @@
 package base;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,6 +13,7 @@ public class Base {
     public static WebDriver driver;
     public static Properties prop;
     public void loadPropertiesFile() throws IOException {
+
         prop=new Properties();
         File propFile=new File(System.getProperty("user.dir")+"\\src\\test\\java\\config\\config.properties");
         try {
@@ -33,8 +33,8 @@ public class Base {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
     @AfterMethod
-    public void tearDown() {
+    public void tearDown()
+    {
         driver.quit();
     }
-
 }

@@ -1,13 +1,10 @@
 package testcases;
 import base.Base;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.io.IOException;
-import java.time.Duration;
+
 import java.util.Date;
 public class Login extends Base {
 
@@ -23,7 +20,6 @@ public class Login extends Base {
         driver.findElement(By.xpath("//input[@value='Login']")).click();
         Assert.assertTrue(driver.findElement(By.xpath("//a[normalize-space()='Edit your account information']")).isDisplayed());
         Thread.sleep(2000);
-        driver.quit();
     }
     @Test(priority = 2)
     public void verifyLoginWithInvalidCredentials() throws InterruptedException {
@@ -37,7 +33,7 @@ public class Login extends Base {
         driver.findElement(By.xpath("//input[@value='Login']")).click();
         Assert.assertTrue(driver.findElement(By.xpath("//div[@class='alert alert-danger alert-dismissible']")).isDisplayed());
         Thread.sleep(2000);
-        driver.quit();
+
     }
     public String generateTimeStamp()
     {

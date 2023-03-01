@@ -1,7 +1,9 @@
 package testcases;
 
 import base.Base;
-import io.qameta.allure.Allure;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,7 +18,6 @@ public class Search extends Base {
         driver.findElement(By.xpath("//button[@class='btn btn-default btn-lg']")).click();
         Assert.assertTrue(driver.findElement(By.xpath("//a[normalize-space()='HP LP3065']")).isDisplayed());
         Thread.sleep(2000);
-        Allure.description("verifySearchWithValidProduct");
     }
     @Test(priority = 2)
     public void verifySearchWithInvalidProduct() throws InterruptedException {
@@ -26,6 +27,5 @@ public class Search extends Base {
         driver.findElement(By.xpath("//button[@class='btn btn-default btn-lg']")).click();
         Assert.assertTrue(driver.findElement(By.xpath("//p[contains(text(),'There is no product that matches the search criter')]")).isDisplayed());
         Thread.sleep(2000);
-        Allure.description("verifySearchWithInvalidProduct");
     }
 }
